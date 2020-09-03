@@ -47,6 +47,7 @@ const Header = () => (
   </header>
 )
 
+// define Footer component
 const Footer = () => (
   <footer className='w3-container w3-dark-grey w3-padding-32 w3-margin-top'>
     <p>
