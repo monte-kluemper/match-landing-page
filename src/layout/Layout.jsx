@@ -24,6 +24,7 @@ export default class Layout extends Component {
 const w100pct = { width: '100%' }
 const w50pct = { width: '50%' }
 
+//define Body component
 const Body = () => (
   <div className='w3-light-grey'>
     <div className='w3-content' style={{ maxWidth: '1400px' }}>
