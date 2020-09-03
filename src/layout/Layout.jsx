@@ -40,6 +40,7 @@ const Body = () => (
   </div>
 )
 
+// define Header component
 const Header = () => (
   <header className='w3-container w3-center w3-padding-32'>
       
