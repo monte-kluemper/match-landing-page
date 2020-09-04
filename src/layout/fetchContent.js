@@ -4,9 +4,10 @@ const host = 'https://demo-oce0002.cec.ocp.oraclecloud.com/'
 const taxonomyCatName = 'Game Highlights'
 /* Define front-end properties - End */
 
-const itemsURL = ({ maxResults, sortOrder }) =>
-  `${host}/content/published/api/v1.1/items?orderBy=${esc(sortOrder)}&limit=${maxResults}&channelToken=${token}&q=(type eq "Story" OR type eq "Match-Hero-Header" AND taxonomies.categories.name eq "${taxonomyCatName}")`
+const itemsURL = ({ maxResults, sortOrder, q }) =>
+  `${host}/content/published/api/v1.1/items?orderBy=${esc(sortOrder)}&limit=${maxResults}&channelToken=${token}&q=${esc(q)}`
 
+// q=(type eq "Story" AND type eq "Match-Hero-Header")&q=(taxonomies.categories.name eq "${taxonomyCatName}"
 const esc = encodeURIComponent
 
 const noDigitalAssets = e => e.type !== 'DigitalAsset'
@@ -25,12 +26,12 @@ const fetchItems = data => {
   return Promise.all(itemFetches).then(data => ({ALL, items:data}))
 }
 
-const fetches = ()=> fetch(
-  itemsURL({ maxResults: 500, sortOrder: 'updatedDate:des' })
+const fetches = ({q})=> fetch(
+  itemsURL({ maxResults: 500, sortOrder: 'updatedDate:des',q })
 )
   .then(response => response.json())
   .then(data => ({ ALL: data }))
 
-const all = () => fetches().then(fetchItems)
+const all = ({q}) => fetches({q}).then(fetchItems)
 
 export default all
