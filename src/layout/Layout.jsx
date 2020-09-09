@@ -4,9 +4,12 @@ import './raleway.css'
 
 import fetchContent from './fetchContent'
 
-//const items = () => fetchContent()
 const toHref = da => da.fields.native.links[0].href
+
+// set taxonomy category to query - Start
 const taxonomyCatName = 'Game Highlights'
+// set taxonomy category to query - End
+
 export default class Layout extends Component {
   render() {
     return (
