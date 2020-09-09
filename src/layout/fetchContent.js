@@ -1,13 +1,7 @@
 /* Define OCE instance URL and channel token - Start */
 const host = 'https://demo-oce0002.cec.ocp.oraclecloud.com'
 const token = 'a5e4f2d801eb4d338a7aad40a86544d5'
-<<<<<<< HEAD
 /* Define OCE instance URL and channel token - End */
-=======
-const host = 'https://demo-oce0002.cec.ocp.oraclecloud.com'
-const taxonomyCatName = 'Game Highlights'
-/* Define front-end properties - End */
->>>>>>> 9c24e6ee00fe8e2cc322526331aacd3d0a9e4cfc
 
 const itemsURL = ({ maxResults, sortOrder, q }) =>
   `${host}/content/published/api/v1.1/items?orderBy=${esc(sortOrder)}&limit=${maxResults}&channelToken=${token}&q=${esc(q)}`
