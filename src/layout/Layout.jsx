@@ -4,7 +4,6 @@ import './raleway.css'
 
 import fetchContent from './fetchContent'
 
-//const items = () => fetchContent()
 const toHref = da => da.fields.native.links[0].href
 const taxonomyCatID = 'RMF-c-s-barcelona'
 export default class Layout extends Component {
