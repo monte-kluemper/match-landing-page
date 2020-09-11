@@ -6,7 +6,7 @@ import fetchContent from './fetchContent'
 
 //const items = () => fetchContent()
 const toHref = da => da.fields.native.links[0].href
-const taxonomyCatID = 'RMF-c-s-barcelona'
+const taxonomyCatName = 'Game Highlights'
 export default class Layout extends Component {
   render() {
     return (
@@ -21,7 +21,7 @@ const w20pct = { width: '20%' }
 
 //define Body component
 const Body = () => (
-  <div className='w3-white'>
+  <div className='w3-light-grey'>
     <div className='w3-content' style={{ maxWidth: '1400px' }}>
     <div class="header_schedule header_1200">
       <div class="header_1200_content">
@@ -45,33 +45,10 @@ const Body = () => (
             </a>
           </h1>
         </div>
-        <div class="navigation_tools navigation_tools_1200">
-            <ul class="navigation_list">
-            <li class="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
-              <a href="/en/fans/madridistas/international" id="menu-neg-1">
-                Get Tickets
-              </a>
-            </li>
-            <li class="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
-              <a href="/en/fans/madridistas/international" id="menu-neg-2">
-                Online Access
-              </a>
-            </li>
-            <li class="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
-              <a href="/en/fans/madridistas/international" id="menu-neg-3">
-                Join the Team
-              </a>
-            </li>
-            </ul>
-          </div>      </div>
+      </div>
       <header className='w3-container w3-center w3-padding-32'>
         <TopArea />
       </header>
-      <div className='w3-row'>
-        <div className='w3-col l12 m12 s12'>
-          <h2>Latest Matchup News</h2>
-        </div>
-      </div>
       <div className='w3-row'>
         <div className='w3-col l12 m12 s12'>
           <Blogs />
@@ -106,8 +83,8 @@ class TopArea extends Component {
   componentDidMount() {
 
     //type eq "Story" OR
-    //AND taxonomies.categories.name eq "${taxonomyCatID}"
-    fetchContent({ q: `type eq "Match-Hero-Header" AND taxonomies.categories.apiName eq "${taxonomyCatID}" AND language eq "en"` }).then(data => {
+    //AND taxonomies.categories.name eq "${taxonomyCatName}"
+    fetchContent({ q: `type eq "Match-Hero-Header"` }).then(data => {
       console.log(data)
 
       const banner = data.items.filter(
@@ -136,7 +113,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([])
   const [err, setErr] = useState(false)
   useEffect(() => {
-    fetchContent({ q: `type eq "Story" AND taxonomies.categories.apiName eq "${taxonomyCatID}" AND language eq "en"` })
+    fetchContent({ q: `type eq "Story" AND taxonomies.categories.name eq "${taxonomyCatName}"` })
       .then(data => {
         const blogs = data.items
         console.log(blogs)
@@ -226,28 +203,31 @@ const Banner = ({ item }) => {
   const date_time = dateToMDY(match_date_time)
 
   return (
-    <div class="full_section m_destacados_home">
+    <div className="w3-col">
       <div className='w3-centered'>
-        <div class="m_full_header_banner2">
-          <div class="m_full_header_banner_info_wrapper">
-            <img width="1500" alt={item.name} src={banner_url} />
-            <div class="m_full_header_banner_info">
-              <div class="wrapper">
-                <div class="m_dest_home_content">
-                  <img src={team_2_logo_url} alt={item.name} style={w20pct} className='w3-show-inline-block' />
-                  <div class="m_dest_home_tipo">{date_time}</div>
-                  <h2><a href="">{team_2_name}</a></h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h3>{date_time}</h3>
+      <div className='w3-col l4 m6'>
+        <img src={team_1_logo_url} alt={item.name} style={w20pct} className='w3-show-inline-block' />
+        <span>{team_1_name}</span>
       </div>
-      <div className='w3-row'>
-        <div className='w3-col l12 m12 s12'>
-          <h4>{score}</h4>
-        </div>
+      <div className='w3-col l4 m6'>{score}</div>
+      <div className='w3-col l4 m6'>
+        <img src={team_2_logo_url} alt={item.name} style={w20pct} className='w3-show-inline-block' />
+        <span>{team_2_name}</span>
+      </div>
+      <img src={banner_url} alt={item.name} />
       </div>
     </div>
+    <div class="full_section m_destacados_home">
+      <div class="m_full_header_banner">
+        <div class="m_full_header_banner_info_wrapper">
+          <img width="1500" alt="Real Madrid and adidas unveil the third jersey for the 2020/21 season" class="blur-up lazyautosizes lazyloaded" src="/img/ultrapanoramica_150px/third_kit_ultrapanoramica_ramos_20200909095718.jpg" data-sizes="auto" data-srcset="/img/ultrapanoramica_300px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 320w,
+                            /img/ultrapanoramica_750px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 640w,
+                            /img/ultrapanoramica_1000px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 990w,
+                            /img/ultrapanoramica_1500px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 2000w" sizes="1500px" srcset="/img/ultrapanoramica_300px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 320w,
+                            /img/ultrapanoramica_750px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 640w,
+                            /img/ultrapanoramica_1000px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 990w,
+                            /img/ultrapanoramica_1500px/third_kit_ultrapanoramica_ramos_20200909095718.jpg 2000w"><div class="m_full_header_banner_info"><div class="wrapper"><div class="m_dest_home_content"><div class="m_dest_home_tipo">News</div><h2><a href="/en/news/2020/09/09/real-madrid-and-adidas-unveil-the-third-jersey-for-the-2020/21-season" onclick="dataLayer.push({'eventCategory': 'Clic_'+dataLayer[0].pageHier,'eventAction': 'Postpartido_Home','eventLabel': 'Ver titular'});">Real Madrid and adidas unveil the third jersey for the 2020/21 season</a></h2><p><a href="/en/fans/photos/real-madrid-and-adidas-unveil-the-third-jersey-for-the-2020/21-season" class="news_banner_picture gallery_popup" onclick="dataLayer.push({'eventCategory': 'Clic_'+dataLayer[0].pageHier,'eventAction': 'Postpartido_Home','eventLabel': 'Galeria de fotos'});"><span>See gallery</span></a></p></div>
+        </div></div></div></div></div>
     )
 }

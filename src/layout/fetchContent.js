@@ -1,8 +1,9 @@
 /* Define front-end properties - Start */
 const token = 'a5e4f2d801eb4d338a7aad40a86544d5'
 const host = 'https://demo-oce0002.cec.ocp.oraclecloud.com/'
-const taxonomyCatName = 'Game Highlights'
+//const taxonomyCatName = 'Game Highlights'
 /* Define front-end properties - End */
+
 
 const itemsURL = ({ maxResults, sortOrder, q }) =>
   `${host}/content/published/api/v1.1/items?orderBy=${esc(sortOrder)}&limit=${maxResults}&channelToken=${token}&q=${esc(q)}`

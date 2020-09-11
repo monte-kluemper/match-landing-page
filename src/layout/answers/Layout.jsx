@@ -46,21 +46,25 @@ const Body = () => (
 
 const Header = () => (
   <header className='w3-container w3-center w3-padding-32'>
-    <h1>
-      <b>Car Lovers Blog</b>
-    </h1>
-    <p>
-      The blog of <span className='w3-tag'>Car Lovers</span>
-    </p>
+    <div class="header_1200_content">
+      <div class="header_info_sponsors sponsors-0" data-morph="nav" data-morph-stack="15" data-morph-devices="tablet, mobile">
+        <a href="http://www.emirates.com" class="header_info_sponsor" target="_blank" onclick="dataLayer.push({'eventCategory': dataLayer[0].pageHier,'eventAction': 'Header','event': 'header|logos','eventLabel': 'Emirates' });">
+          <img alt="Emirates" src="/cs/Satellite?blobcol=urldata&amp;blobheader=image%2Fpng&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1203388262780&amp;ssbinary=true"/></a>
+        <a href="https://www.adidas.co.uk/football" class="header_info_sponsor" target="_blank" onclick="dataLayer.push({'eventCategory': dataLayer[0].pageHier,'eventAction': 'Header','event': 'header|logos','eventLabel': 'Adidas' });">
+          <img alt="Adidas" src="/cs/Satellite?blobcol=urldata&amp;blobheader=image%2Fjpeg&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1203408965379&amp;ssbinary=true"/></a>
+      </div>
+    </div>
+    <div class="header">
+    </div>
   </header>
 )
 
 const Footer = () => (
   <footer className='w3-container w3-dark-grey w3-padding-32 w3-margin-top'>
     <p>
-      Powered by{' '}
-      <a href='https://www.w3schools.com/w3css/default.asp' target='_blank'>
-        w3.css
+      Powered by
+      <a href='https://www.oracle.com/middleware/technologies/content-experience-downloads.html' target='_blank'>
+        Oracle CX Content and React JS
       </a>
     </p>
   </footer>
@@ -144,7 +148,7 @@ class Blogs extends Component {
     items()
       .then(data => {
         console.log(data)
-        
+
         const blogs = data.ALL.items.filter(
           item => item.type === 'Maximum_Article'
         )
