@@ -22,41 +22,41 @@ const w20pct = { width: '20%' }
 const Body = () => (
   <div className='w3-white'>
     <div className='w3-content' style={{ maxWidth: '1400px' }}>
-    <div class="header_schedule header_1200">
-      <div class="header_1200_content">
-        <div class="header_info_sponsors sponsors-0" data-morph="nav" data-morph-stack="15" data-morph-devices="tablet, mobile">
-          <a href="http://www.emirates.com" class="header_info_sponsor" target="_blank" onclick="dataLayer.push({'eventCategory': dataLayer[0].pageHier,'eventAction': 'Header','event': 'header|logos','eventLabel': 'Emirates' });">
+    <div className="header_schedule header_1200">
+      <div className="header_1200_content">
+        <div className="header_info_sponsors sponsors-0" data-morph="nav" data-morph-stack="15" data-morph-devices="tablet, mobile">
+          <a href="http://www.emirates.com" className="header_info_sponsor" target="_blank" onclick="dataLayer.push({'eventCategory': dataLayer[0].pageHier,'eventAction': 'Header','event': 'header|logos','eventLabel': 'Emirates' });">
             <img alt="Emirates" src="https://www.realmadrid.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fpng&blobkey=id&blobtable=MungoBlobs&blobwhere=1203388262780&ssbinary=true"/></a>
-          <a href="https://www.adidas.co.uk/football" class="header_info_sponsor" target="_blank" onclick="dataLayer.push({'eventCategory': dataLayer[0].pageHier,'eventAction': 'Header','event': 'header|logos','eventLabel': 'Adidas' });">
+          <a href="https://www.adidas.co.uk/football" className="header_info_sponsor" target="_blank" onclick="dataLayer.push({'eventCategory': dataLayer[0].pageHier,'eventAction': 'Header','event': 'header|logos','eventLabel': 'Adidas' });">
             <img alt="Adidas" src="https://www.realmadrid.com/cs/Satellite?blobcol=urldata&amp;blobheader=image%2Fjpeg&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1203408965379&amp;ssbinary=true"/></a>
           </div>
         </div>
       </div>
-      <div class="header_main_wrapper header_main_1200">
-        <div class="header_logo original_logo" data-sticky-header-logo="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/RM_sticky_logo.svg">
-          <a href="/en" class="header_logo_link">
-            <img id="headerLazo" class="header_lazo" src="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/header_lazo.png" alt="Lazo" />
+      <div className="header_main_wrapper header_main_1200">
+        <div className="header_logo original_logo" data-sticky-header-logo="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/RM_sticky_logo.svg">
+          <a href="/en" className="header_logo_link">
+            <img id="headerLazo" className="header_lazo" src="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/header_lazo.png" alt="Lazo" />
           </a>
-          <h1 class="header_logo_title">
-            <a href="/en" title="Real Madrid C.F." class="header_logo_link">
-              <img src="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/header_logo.svg" alt="Real Madrid C.F. - logo" class="hide_for_mobile hide_for_tablet" />
-              <img src="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/header_logo_mobile.svg" alt="Real Madrid C.F. - logo" class="hide_for_desktop" />
+          <h1 className="header_logo_title">
+            <a href="/en" title="Real Madrid C.F." className="header_logo_link">
+              <img src="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/header_logo.svg" alt="Real Madrid C.F. - logo" className="hide_for_mobile hide_for_tablet" />
+              <img src="https://www.realmadrid.com/StaticFiles/RealMadridResponsive/images/header_logo_mobile.svg" alt="Real Madrid C.F. - logo" className="hide_for_desktop" />
             </a>
           </h1>
         </div>
-        <div class="navigation_tools navigation_tools_1200">
-            <ul class="navigation_list">
-            <li class="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
+        <div className="navigation_tools navigation_tools_1200">
+            <ul className="navigation_list">
+            <li className="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
               <a href="/en/fans/madridistas/international" id="menu-neg-1">
                 Get Tickets
               </a>
             </li>
-            <li class="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
+            <li className="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
               <a href="/en/fans/madridistas/international" id="menu-neg-2">
                 Online Access
               </a>
             </li>
-            <li class="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
+            <li className="navlist_item navlist_item_right navlist_item_tool" data-morph="nav" data-morph-stack="9" data-morph-devices="tablet, mobile" data-morph-target="[role=navigation] > ul">
               <a href="/en/fans/madridistas/international" id="menu-neg-3">
                 Join the Team
               </a>
